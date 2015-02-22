@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,15 +18,18 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private static final String TAG = MainActivity.class.getSimpleName();
     private String buffer = "";
     private TextView txtDebug;
+    private ProgressBar progressBar;
+    int progress = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
+        progressBar = (ProgressBar)findViewById(R.id.progress_level);
         findViewById(R.id.left).setOnClickListener(this);
         findViewById(R.id.right).setOnClickListener(this);
-        Timer timer = new Timer();
+        final Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -44,6 +48,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         }
                         buffer = "";
                         txtDebug.setText(buffer);
+                        progress++;
+                        progressBar.setProgress(progress);
+                        if (progress >= 10){
+                            timer.cancel();
+                            Toast.makeText(MainActivity.this, "End of level", Toast.LENGTH_SHORT).show();
+
+                        }
                     }
                 });
             }
