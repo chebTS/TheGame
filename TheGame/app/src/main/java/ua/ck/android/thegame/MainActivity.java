@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,13 +20,20 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private String buffer = "";
     private TextView txtDebug;
     private ProgressBar progressBar;
-    int progress = 0;
+    private int progress = 0;
+    private Button btnEro, btnTrombo, btnLeiko, btnBadGuy;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
+        btnBadGuy = (Button)findViewById(R.id.btn_bad_guy_1);
+        btnEro = (Button)findViewById(R.id.btn_ero);
+        btnTrombo = (Button)findViewById(R.id.btn_trombo);
+        btnLeiko = (Button)findViewById(R.id.btn_leiko);
+
         progressBar = (ProgressBar)findViewById(R.id.progress_level);
         findViewById(R.id.left).setOnClickListener(this);
         findViewById(R.id.right).setOnClickListener(this);
@@ -45,6 +53,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(MainActivity.this, "No action", Toast.LENGTH_SHORT).show();
+                            
                         }
                         buffer = "";
                         txtDebug.setText(buffer);
@@ -52,7 +61,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         progressBar.setProgress(progress);
                         if (progress >= 10){
                             timer.cancel();
-                            Toast.makeText(MainActivity.this, "End of level", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "End of level ", Toast.LENGTH_SHORT).show();
 
                         }
                     }
