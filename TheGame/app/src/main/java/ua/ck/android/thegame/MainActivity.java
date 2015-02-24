@@ -6,7 +6,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +24,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private TextView txtDebug;
     private ProgressBar progressBar;
     private int progress = 0;
-    private Button btnEro, btnTrombo, btnLeiko, btnBadGuy;
+    private Button btnEro, btnTrombo, btnLeiko;
+    private ImageView imgBadGuy;
 
 
     @Override
@@ -29,7 +33,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
-        btnBadGuy = (Button)findViewById(R.id.btn_bad_guy_1);
+        imgBadGuy = (ImageView)findViewById(R.id.img_bad_guy_1);
         btnEro = (Button)findViewById(R.id.btn_ero);
         btnTrombo = (Button)findViewById(R.id.btn_trombo);
         btnLeiko = (Button)findViewById(R.id.btn_leiko);
@@ -68,8 +72,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 });
             }
         }, 3000, 3000);
-    }
 
+        load_animations();
+    }
+    void load_animations(){
+        new AnimationUtils();
+        Animation rotation = AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
+        imgBadGuy.startAnimation(rotation);
+
+        Animation move = AnimationUtils.loadAnimation(this, R.anim.move_anim);
+        btnEro.startAnimation(move);
+        btnLeiko.startAnimation(move);
+        btnTrombo.startAnimation(move);
+    }
 
     @Override
     public void onClick(View v) {

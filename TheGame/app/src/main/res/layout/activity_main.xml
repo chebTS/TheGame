@@ -44,11 +44,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_bad_guy_1"
-            android:text="Bad Guy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/img_bad_guy_1"
+            android:src="@drawable/unit1"
+            android:layout_margin="20dp"
+            android:layout_width="100dp"
+            android:layout_height="120dp" />
     </LinearLayout>
 
     <LinearLayout
