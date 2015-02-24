@@ -27,7 +27,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private Button btnEro, btnTrombo, btnLeiko;
     private ImageView imgBadGuy;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +83,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         btnEro.startAnimation(move);
         btnLeiko.startAnimation(move);
         btnTrombo.startAnimation(move);
+
     }
 
     @Override
