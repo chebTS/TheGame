@@ -22,7 +22,7 @@ public class MenuActivity extends ActionBarActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.txt_play:
-                    startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                    startActivity(new Intent(MenuActivity.this, LevelsActivity.class));
                 break;
             case R.id.txt_credits:
                     startActivity(new Intent(MenuActivity.this, CreditsActivity.class));
