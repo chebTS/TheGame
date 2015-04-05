@@ -72,7 +72,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         }, 3000, 3000);
 
-        load_animations();
+        //load_animations();
     }
     void load_animations(){
         new AnimationUtils();
