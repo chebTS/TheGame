@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private TextView txtDebug;
     private ProgressBar progressBar;
     private int progress = 0;
-    private Button btnEro, btnTrombo, btnLeiko;
+    private ImageView btnEro, btnTrombo, btnLeiko;
     private ImageView imgBadGuy;
 
     @Override
@@ -33,9 +33,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
         imgBadGuy = (ImageView)findViewById(R.id.img_bad_guy_1);
-        btnEro = (Button)findViewById(R.id.btn_ero);
-        btnTrombo = (Button)findViewById(R.id.btn_trombo);
-        btnLeiko = (Button)findViewById(R.id.btn_leiko);
+        btnEro = (ImageView)findViewById(R.id.img_ero);
+        btnTrombo = (ImageView)findViewById(R.id.img_trombo);
+        btnLeiko = (ImageView)findViewById(R.id.img_leiko);
 
         progressBar = (ProgressBar)findViewById(R.id.progress_level);
         findViewById(R.id.left).setOnClickListener(this);

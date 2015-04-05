@@ -13,27 +13,27 @@
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_ero"
-            android:text="Erythr"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/img_ero"
+            android:src="@drawable/eri"
+            android:layout_width="80dp"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_trombo"
-            android:text="Trombo"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/img_trombo"
+            android:src="@drawable/tro"
+            android:layout_width="80dp"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_leiko"
-            android:text="Leiko"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/img_leiko"
+            android:src="@drawable/lei"
+            android:layout_width="80dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -46,7 +46,7 @@
 
         <ImageView
             android:id="@+id/img_bad_guy_1"
-            android:src="@drawable/unit1"
+            android:src="@drawable/ebbi"
             android:layout_margin="20dp"
             android:layout_width="100dp"
             android:layout_height="120dp" />
