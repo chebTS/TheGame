@@ -68,7 +68,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -83,7 +83,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
