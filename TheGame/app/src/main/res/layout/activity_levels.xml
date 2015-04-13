@@ -1,15 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@drawable/levels_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="400dp"
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="100dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_width="0dp"
         android:layout_height="match_parent">
 
-    </ListView>
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_margin="25dp"
+            android:background="@drawable/done_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_margin="25dp"
+            android:background="@drawable/open_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_3"
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingRight="100dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_margin="25dp"
+            android:background="@drawable/blocked_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </LinearLayout>
