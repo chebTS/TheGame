@@ -17,21 +17,32 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:orientation="vertical"
+            android:gravity="center"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:id="@+id/txt_play"
-                android:text="Play"
-                android:layout_width="match_parent"
+                android:text="Start"
+                android:background="@drawable/menu_bg_red"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/menu_textview" />
 
             <TextView
-                android:id="@+id/txt_credits"
-                android:text="Credits"
-                android:layout_width="match_parent"
+                android:id="@+id/txt_continue"
+                android:text="Continue"
+                android:background="@drawable/menu_bg_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/menu_textview" />
+
+            <TextView
+                android:id="@+id/txt_exit"
+                android:text="Exit"
+                android:background="@drawable/menu_bg_grey"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/menu_textview"/>
 

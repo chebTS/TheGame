@@ -22,11 +22,6 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
-            android:name=".CreditsActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
-        </activity>
-        <activity
             android:name=".LevelsActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" >
