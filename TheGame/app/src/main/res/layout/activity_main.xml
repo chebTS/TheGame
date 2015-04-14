@@ -129,6 +129,13 @@
     </LinearLayout>
 
 
+    <ImageView
+        android:src="@drawable/bg_progressbar"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -171,7 +178,7 @@
         android:id="@+id/progress_level"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:max="10"
         android:progress="0" />
