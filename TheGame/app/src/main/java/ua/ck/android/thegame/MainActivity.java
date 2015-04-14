@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,12 +27,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private int progress = 0;
     private ImageView btnEro, btnTrombo, btnLeiko;
     private ImageView imgBadGuy;
+    private LinearLayout drumsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
+        drumsContainer = (LinearLayout)findViewById(R.id.drums_container);
         imgBadGuy = (ImageView)findViewById(R.id.img_bad_guy_1);
         btnEro = (ImageView)findViewById(R.id.img_ero);
         btnTrombo = (ImageView)findViewById(R.id.img_trombo);
@@ -60,6 +63,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         }
                         buffer = "";
                         txtDebug.setText(buffer);
+                        drumsContainer.removeAllViews();
                         progress++;
                         progressBar.setProgress(progress);
                         if (progress >= 10){
@@ -83,8 +87,20 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         btnEro.startAnimation(move);
         btnLeiko.startAnimation(move);
         btnTrombo.startAnimation(move);
-
     }
+
+    private void addR(){
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.button_blue_statusbar);
+        drumsContainer.addView(imageView);
+    }
+
+    private void addL(){
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.button_green_statusbar);
+        drumsContainer.addView(imageView);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -93,11 +109,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Log.i(TAG, "Left");
                 buffer = buffer + "L";
                 txtDebug.setText(buffer);
+                addL();
                 break;
             case R.id.right:
                 Log.i(TAG, "Right");
                 buffer = buffer + "R";
                 txtDebug.setText(buffer);
+                addR();
                 break;
         }
     }
