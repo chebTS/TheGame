@@ -16,7 +16,6 @@ public class MenuActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_menu);
         findViewById(R.id.txt_play).setOnClickListener(this);
         findViewById(R.id.txt_continue).setOnClickListener(this);
-        findViewById(R.id.txt_exit).setOnClickListener(this);
     }
 
     @Override
@@ -25,9 +24,6 @@ public class MenuActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.txt_continue:
             case R.id.txt_play:
                     startActivity(new Intent(MenuActivity.this, LevelsActivity.class));
-                break;
-            case R.id.txt_exit:
-                    finish();
                 break;
         }
     }

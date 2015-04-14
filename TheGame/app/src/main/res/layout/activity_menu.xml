@@ -23,6 +23,12 @@
             android:layout_weight="1">
 
             <TextView
+                android:text="BloodGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/menu_textview_logo"/>
+
+            <TextView
                 android:id="@+id/txt_play"
                 android:text="Start"
                 android:background="@drawable/menu_bg_red"
@@ -37,14 +43,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/menu_textview" />
-
-            <TextView
-                android:id="@+id/txt_exit"
-                android:text="Exit"
-                android:background="@drawable/menu_bg_grey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/menu_textview"/>
 
         </LinearLayout>
         <LinearLayout
@@ -61,6 +59,16 @@
         android:textOff=""
         android:textOn=""
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="DEMO"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textSize="64sp"
+        android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

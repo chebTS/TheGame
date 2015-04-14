@@ -4,6 +4,10 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
+    <style name="menu_textview_logo" parent="menu_textview">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 
     <style name="menu_textview">
         <item name="android:padding">10dp</item>
