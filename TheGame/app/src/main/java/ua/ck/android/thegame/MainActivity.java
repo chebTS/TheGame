@@ -109,13 +109,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Log.i(TAG, "Left");
                 buffer = buffer + "L";
                 txtDebug.setText(buffer);
-                addL();
+                addR();
                 break;
             case R.id.right:
                 Log.i(TAG, "Right");
                 buffer = buffer + "R";
                 txtDebug.setText(buffer);
-                addR();
+                addL();
                 break;
         }
     }
