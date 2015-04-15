@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -33,11 +34,17 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private LinearLayout drumsContainer;
     private TextView txtHP, txtHPe, txtO2;
     private ImageView imgCombo;
+    private int hp, hpe, o2;
+    private boolean hurt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        hp =100;
+        hpe = 100;
+        o2 = 100;
+        hurt = false;
         txtDebug = (TextView)findViewById(R.id.txt_debug);
         drumsContainer = (LinearLayout)findViewById(R.id.drums_container);
         imgBadGuy = (ImageView)findViewById(R.id.img_bad_guy_1);
@@ -62,8 +69,16 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 txtDebug.post(new Runnable() {
                     @Override
                     public void run() {
+                        Random random = new Random();
+                        boolean b= random.nextBoolean();
                         if(buffer.startsWith("LRRL")){
                             Toast.makeText(MainActivity.this, "Atack", Toast.LENGTH_SHORT).show();
+                            if (b) {
+                                hpe = hpe - 5;
+                            }else{
+                                hpe = hpe - 10;
+                            }
+                            txtHPe.setText(String.valueOf(hpe));
                             showCombo(R.drawable.combo_lei);
                         }else if (buffer.startsWith("RLLR")){
                             Toast.makeText(MainActivity.this, "Defence", Toast.LENGTH_SHORT).show();
@@ -81,18 +96,24 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         progressBar.setProgress(progress);
                         if (progress >= 10){
                             timer.cancel();
-                            ResultDialog dialog = ResultDialog.newInstance(true);
+                            boolean win;
+                            if (hp >= hpe){
+                                win = true;
+                            }else{
+                                win = false;
+                            }
+                            ResultDialog dialog = ResultDialog.newInstance(win);
+
                             FragmentTransaction ft = getFragmentManager().beginTransaction();
+
                             dialog.show(ft, "dialog");
                             Toast.makeText(MainActivity.this, "End of level ", Toast.LENGTH_SHORT).show();
-
                         }
                     }
                 });
             }
         }, 3000, 3000);
 
-        //load_animations();
     }
     void load_animations(){
         new AnimationUtils();
