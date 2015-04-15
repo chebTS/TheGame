@@ -59,7 +59,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(MainActivity.this, "No action", Toast.LENGTH_SHORT).show();
-                            
                         }
                         buffer = "";
                         txtDebug.setText(buffer);
