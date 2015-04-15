@@ -24,6 +24,7 @@
 
             <TextView
                 android:text="BloodGame"
+                android:textColor="#D20000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/menu_textview_logo"/>
@@ -67,7 +68,7 @@
         android:text="DEMO"
         android:textStyle="bold"
         android:padding="15dp"
-        android:textSize="64sp"
+        android:textSize="52sp"
         android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
