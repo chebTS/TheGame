@@ -76,7 +76,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         boolean b= random.nextBoolean();
                         boolean b2= random.nextBoolean();
                         if(buffer.startsWith("LRRL")){
-                            Toast.makeText(MainActivity.this, "Atack", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "Atack", Toast.LENGTH_SHORT).show();
                             if (b) {
                                 hpe = hpe - 5;
                             }else{
@@ -85,12 +85,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             txtHPe.setText(String.valueOf(hpe));
                             showCombo(R.drawable.combo_lei);
                         }else if (buffer.startsWith("RLLR")){
-                            Toast.makeText(MainActivity.this, "Defence", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "Defence", Toast.LENGTH_SHORT).show();
                             showCombo(R.drawable.combo_eri);
                             btnHurt.setChecked(false);
 
                         }else if (buffer.startsWith("RRRL")){
-                            Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
                             showCombo(R.drawable.combo_tro);
                             if (b) {
                                 if (o2 >= 5) {
@@ -116,7 +116,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             }else{
                                 btnHurt.setChecked(true);
                             }
-                            Toast.makeText(MainActivity.this, "No action", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "No action", Toast.LENGTH_SHORT).show();
+                            showCombo(R.drawable.combo_ebbi);
                         }
                         if (btnHurt.isChecked()){
                             hp = hp -5;
@@ -140,7 +141,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             ResultDialog dialog = ResultDialog.newInstance(win);
                             FragmentTransaction ft = getFragmentManager().beginTransaction();
                             dialog.show(ft, "dialog");
-                            Toast.makeText(MainActivity.this, "End of level ", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "End of level ", Toast.LENGTH_SHORT).show();
                         }
                         if (hp <= 0){
                             timer.cancel();
