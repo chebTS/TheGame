@@ -15,16 +15,17 @@ public class LevelsActivity extends ActionBarActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
         findViewById(R.id.btn_1).setOnClickListener(this);
+        findViewById(R.id.btn_2).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_1:
-                startActivity(new Intent(LevelsActivity.this, MainActivity.class));
+                startActivity(new Intent(LevelsActivity.this, TutorialActivity.class));
                 break;
             case R.id.btn_2:
-                startActivity(new Intent(LevelsActivity.this, MainActivity.class));
+                startActivity(new Intent(LevelsActivity.this, TutorialActivity.class));
                 break;
             case R.id.btn_3:
                 break;
