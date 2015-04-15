@@ -1,6 +1,7 @@
 package ua.ck.android.thegame;
 
 import android.media.Image;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,10 +63,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     public void run() {
                         if(buffer.startsWith("LRRL")){
                             Toast.makeText(MainActivity.this, "Atack", Toast.LENGTH_SHORT).show();
+                            showCombo(R.drawable.combo_lei);
                         }else if (buffer.startsWith("RLLR")){
                             Toast.makeText(MainActivity.this, "Defence", Toast.LENGTH_SHORT).show();
+                            showCombo(R.drawable.combo_eri);
                         }else if (buffer.startsWith("RRRL")){
                             Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
+                            showCombo(R.drawable.combo_tro);
                         }else{
                             Toast.makeText(MainActivity.this, "No action", Toast.LENGTH_SHORT).show();
                         }
@@ -95,6 +99,18 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         btnEro.startAnimation(move);
         btnLeiko.startAnimation(move);
         btnTrombo.startAnimation(move);
+    }
+
+    private void showCombo(int res){
+        imgCombo.setImageResource(res);
+        imgCombo.setVisibility(View.VISIBLE);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                imgCombo.setVisibility(View.GONE);
+            }
+        }, 400);
     }
 
     private void addR(){
