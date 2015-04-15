@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.Random;
 import java.util.Timer;
@@ -36,6 +37,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private ImageView imgCombo;
     private int hp, hpe, o2;
     private boolean hurt;
+    private ToggleButton btnHurt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         hpe = 100;
         o2 = 100;
         hurt = false;
+        btnHurt = (ToggleButton) findViewById(R.id.btn_hurt);
+        btnHurt.setChecked(false);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
         drumsContainer = (LinearLayout)findViewById(R.id.drums_container);
         imgBadGuy = (ImageView)findViewById(R.id.img_bad_guy_1);
@@ -71,6 +75,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     public void run() {
                         Random random = new Random();
                         boolean b= random.nextBoolean();
+                        boolean b2= random.nextBoolean();
                         if(buffer.startsWith("LRRL")){
                             Toast.makeText(MainActivity.this, "Atack", Toast.LENGTH_SHORT).show();
                             if (b) {
@@ -83,11 +88,41 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         }else if (buffer.startsWith("RLLR")){
                             Toast.makeText(MainActivity.this, "Defence", Toast.LENGTH_SHORT).show();
                             showCombo(R.drawable.combo_eri);
+                            btnHurt.setChecked(false);
                         }else if (buffer.startsWith("RRRL")){
                             Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
                             showCombo(R.drawable.combo_tro);
+                            if (b) {
+                                if (o2 >= 5) {
+                                    hp = hp + 5;
+                                    o2 = o2 - 5;
+                                }
+                            }else{
+                                if (o2 >= 10) {
+                                    hp = hp + 10;
+                                    o2 = o2 - 10;
+                                }
+                            }
+                            txtO2.setText(String.valueOf(o2));
+                            txtHP.setText(String.valueOf(hp));
                         }else{
+                            if (b) {
+                                if (b2){
+                                   hp = hp - 10;
+                                }else{
+                                   hp = hp - 20;
+                                }
+                                txtHP.setText(String.valueOf(hp));
+                            }else{
+                                btnHurt.setChecked(true);
+                            }
                             Toast.makeText(MainActivity.this, "No action", Toast.LENGTH_SHORT).show();
+                        }
+                        if (btnHurt.isChecked()){
+                            hp = hp -5;
+                            o2 = o2 -5;
+                            txtO2.setText(String.valueOf(o2));
+                            txtHP.setText(String.valueOf(hp));
                         }
                         buffer = "";
                         txtDebug.setText(buffer);
