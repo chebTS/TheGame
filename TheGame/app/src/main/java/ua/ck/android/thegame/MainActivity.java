@@ -28,6 +28,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private ImageView btnEro, btnTrombo, btnLeiko;
     private ImageView imgBadGuy;
     private LinearLayout drumsContainer;
+    private TextView txtHP, txtHPe, txtO2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         btnEro = (ImageView)findViewById(R.id.img_ero);
         btnTrombo = (ImageView)findViewById(R.id.img_trombo);
         btnLeiko = (ImageView)findViewById(R.id.img_leiko);
+
+        txtHP = (TextView)findViewById(R.id.txt_hp);
+        txtHPe = (TextView)findViewById(R.id.txt_hpe);
+        txtO2 = (TextView)findViewById(R.id.txt_o2);
 
         progressBar = (ProgressBar)findViewById(R.id.progress_level);
         findViewById(R.id.left).setOnClickListener(this);
