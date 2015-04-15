@@ -1,5 +1,6 @@
 package ua.ck.android.thegame;
 
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +30,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private ImageView imgBadGuy;
     private LinearLayout drumsContainer;
     private TextView txtHP, txtHPe, txtO2;
+    private ImageView imgCombo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         txtHP = (TextView)findViewById(R.id.txt_hp);
         txtHPe = (TextView)findViewById(R.id.txt_hpe);
         txtO2 = (TextView)findViewById(R.id.txt_o2);
+
+        imgCombo = (ImageView)findViewById(R.id.img_combo);
 
         progressBar = (ProgressBar)findViewById(R.id.progress_level);
         findViewById(R.id.left).setOnClickListener(this);
