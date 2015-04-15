@@ -1,5 +1,6 @@
 package ua.ck.android.thegame;
 
+import android.app.FragmentTransaction;
 import android.media.Image;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -80,6 +81,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         progressBar.setProgress(progress);
                         if (progress >= 10){
                             timer.cancel();
+                            ResultDialog dialog = ResultDialog.newInstance(true);
+                            FragmentTransaction ft = getFragmentManager().beginTransaction();
+                            dialog.show(ft, "dialog");
                             Toast.makeText(MainActivity.this, "End of level ", Toast.LENGTH_SHORT).show();
 
                         }
@@ -110,7 +114,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             public void run() {
                 imgCombo.setVisibility(View.GONE);
             }
-        }, 400);
+        }, 350);
     }
 
     private void addR(){
