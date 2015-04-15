@@ -46,7 +46,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         hp =100;
         hpe = 100;
         o2 = 100;
-        hurt = false;
         btnHurt = (ToggleButton) findViewById(R.id.btn_hurt);
         btnHurt.setChecked(false);
         txtDebug = (TextView)findViewById(R.id.txt_debug);
@@ -89,6 +88,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             Toast.makeText(MainActivity.this, "Defence", Toast.LENGTH_SHORT).show();
                             showCombo(R.drawable.combo_eri);
                             btnHurt.setChecked(false);
+
                         }else if (buffer.startsWith("RRRL")){
                             Toast.makeText(MainActivity.this, "Heal", Toast.LENGTH_SHORT).show();
                             showCombo(R.drawable.combo_tro);
@@ -138,13 +138,18 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                                 win = false;
                             }
                             ResultDialog dialog = ResultDialog.newInstance(win);
-
                             FragmentTransaction ft = getFragmentManager().beginTransaction();
-
                             dialog.show(ft, "dialog");
                             Toast.makeText(MainActivity.this, "End of level ", Toast.LENGTH_SHORT).show();
                         }
+                        if (hp <= 0){
+                            timer.cancel();
+                            ResultDialog dialog = ResultDialog.newInstance(false);
+                            FragmentTransaction ft = getFragmentManager().beginTransaction();
+                            dialog.show(ft, "dialog");
+                        }
                     }
+
                 });
             }
         }, 3000, 3000);
